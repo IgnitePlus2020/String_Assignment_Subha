@@ -8,24 +8,38 @@ public class HyphenRemoval {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter a string:");
         s = in.nextLine();
+        if(s.isEmpty())
+        {
+            System.out.println("Empty string!!!");
+            return;
+        }
         int n=s.length();
         System.out.println("String after removing hyphen between digits : ");
-        char[] array=s.toCharArray();
-        int i,j=0;
-        for(i=0;i<n;i++) {
-            if (array[i] == '-' && Character.isDigit(array[i - 1]) && Character.isDigit(array[i + 1])) ;
+        StringBuilder newstring=new StringBuilder();
+        newstring.append(s.charAt(0));
+        for(int i=1;i<n-1;i++)
+        {
+            if (s.charAt(i) == '-' && Character.isDigit(s.charAt(i-1)) && Character.isDigit(s.charAt(i+1)));
             else
-                array[j++] = array[i];
+                newstring.append(s.charAt(i));
         }
-        while(j<i) {
-            array[j++] = '\0';
-        }
-        System.out.println(array);
+        if(n>1)
+            newstring.append(s.charAt(n-1));
+        System.out.println(newstring);
+
     }
 }
-/*OUTPUT:
+/*OUTPUT1:
 Enter a string:
-134-10/5566 A-Block
+a-block,manyata tech-park 12-45 #-12 Test
 String after removing hyphen between digits :
-13410/5566 A-Block
+a-block,manyata tech-park 1245 #-12 Test
+
+OUTPUT2:
+Enter a string:
+-134-10/5566 a-block, new manyata tech-park
+String after removing hyphen between digits :
+-13410/5566 a-block, new manyata tech-park
+
+
  */

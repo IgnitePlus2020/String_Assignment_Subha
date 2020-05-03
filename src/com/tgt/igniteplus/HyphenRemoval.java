@@ -29,17 +29,10 @@ public class HyphenRemoval {
 
     }
 }
-/*OUTPUT1:
+/*OUTPUT:
 Enter a string:
-a-block,manyata tech-park 12-45 #-12 Test
-String after removing hyphen between digits :
-a-block,manyata tech-park 1245 #-12 Test
-
-OUTPUT2:
-Enter a string:
--134-10/5566 a-block, new manyata tech-park
-String after removing hyphen between digits :
--13410/5566 a-block, new manyata tech-park
-
+-134-10/5566 A-block, New Manyata Tech-Park 12-45 testing
+String after removing hyphen between digits : 
+-13410/5566 A-block, New Manyata Tech-Park 1245 testing
 
  */
